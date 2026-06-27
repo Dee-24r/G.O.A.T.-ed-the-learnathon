@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>G.O.A.T.'ed — the learnathon 🐐</title>
+  <meta name="description" content="G.O.A.T.'ed is a free, 2-day, in-person learnathon in NYC for teens 13–18. Learn 5–7 new technologies and become a Geek Of All Trades. Total beginners welcome!" />
+
+  <!-- Fonts: Fredoka (display) + Nunito (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="#top" class="logo" aria-label="G.O.A.T.'ed home">
+        <span class="logo__goat">🐐</span>
+        <span class="logo__text">G.O.A.T.<span class="logo__ed">'ed</span>
+          <small>the learnathon</small>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#tech">Tech</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav__right">
+        <span class="countdown-chip" id="navCountdown" aria-live="polite">Starts soon</span>
+        <a href="#register" class="btn btn--primary btn--sm">Register</a>
+        <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile drawer -->
+    <div class="drawer" id="drawer" hidden>
+      <a href="#about">About</a>
+      <a href="#tech">Tech</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#faq">FAQ</a>
+      <a href="#register" class="btn btn--primary">Register Now</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__blob hero__blob--1"></div>
+      <div class="hero__blob hero__blob--2"></div>
+
+      <div class="hero__inner">
+        <span class="eyebrow">🐐 Aug 15–16 · New York City · 100% Free</span>
+        <h1 class="hero__title">Become the <span class="grad">GOAT</span> 🐐</h1>
+        <p class="hero__tagline">2 days. 5–7 technologies. Become a <strong>Geek Of All Trades.</strong></p>
+        <p class="hero__desc">
+          A free, in-person learnathon for teens aged <strong>13–18</strong>.
+          Never coded before? Perfect — we'll teach you from scratch and you'll
+          walk out having built real stuff.
+        </p>
+
+        <!-- inline email sign-up = primary register path -->
+        <form class="signup" id="heroSignup">
+          <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn--primary">Save my spot ✨</button>
+        </form>
+        <p class="signup__note" id="heroSignupNote" role="status"></p>
+
+        <a href="#tech" class="link-ghost">View the lineup ↓</a>
+
+        <!-- countdown -->
+        <div class="countdown" id="countdown" aria-label="Countdown to the event">
+          <div class="countdown__box"><strong data-unit="days">--</strong><span>days</span></div>
+          <div class="countdown__box"><strong data-unit="hours">--</strong><span>hrs</span></div>
+          <div class="countdown__box"><strong data-unit="minutes">--</strong><span>min</span></div>
+          <div class="countdown__box"><strong data-unit="seconds">--</strong><span>sec</span></div>
+        </div>
+
+        <ul class="facts">
+          <li>📅 Aug 15–16</li>
+          <li>📍 NYC</li>
+          <li>🆓 Free</li>
+          <li>🧠 5–7 techs</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="section__head reveal">
+        <span class="eyebrow">What is this?</span>
+        <h2>One weekend. A whole new you. 🚀</h2>
+        <p class="lead">
+          G.O.A.T.'ed is a 2-day learnathon where you pick up a pile of brand-new
+          technologies and turn them into real projects. The more you learn, the
+          closer you get to <strong>GOAT status</strong> — then you finish it all off
+          with your own capstone project to show off.
+        </p>
+      </div>
+
+      <ol class="steps reveal">
+        <li><span class="steps__num">1</span><h3>Sign up</h3><p>Drop your email — that's it. Free, no experience needed.</p></li>
+        <li><span class="steps__num">2</span><h3>Learn &amp; build</h3><p>Two days of hands-on workshops with mentors by your side.</p></li>
+        <li><span class="steps__num">3</span><h3>Demo your capstone</h3><p>Ship a real project and leave a certified Geek Of All Trades.</p></li>
+      </ol>
+
+      <div class="cards-3 reveal">
+        <div class="card pop"><span class="card__emoji">⚡</span><h3>Learn fast</h3><p>5–7 technologies in a single weekend.</p></div>
+        <div class="card pop"><span class="card__emoji">🛠️</span><h3>Build hands-on</h3><p>Less lecture, more making things that actually work.</p></div>
+        <div class="card pop"><span class="card__emoji">📈</span><h3>Level up</h3><p>Go from total beginner to building your own projects.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ BENEFITS ============ -->
+    <section class="section section--tint" id="benefits">
+      <div class="section__head reveal">
+        <span class="eyebrow">Why come?</span>
+        <h2>Stuff you'll actually walk away with</h2>
+      </div>
+
+      <div class="benefits reveal">
+        <div class="card"><span class="card__emoji">🧪</span><h3>Hands-on workshops</h3><p>Build something real in every single session.</p></div>
+        <div class="card"><span class="card__emoji">🧑‍🏫</span><h3>Mentor support</h3><p>Friendly humans to unstick you whenever you're stuck.</p></div>
+        <div class="card"><span class="card__emoji">🤝</span><h3>Meet teen builders</h3><p>Team up with other teens who love making things.</p></div>
+        <div class="card"><span class="card__emoji">💼</span><h3>Portfolio projects</h3><p>Leave with real work you can actually show off.</p></div>
+      </div>
+
+      <div class="cta-strip reveal">
+        <p>Spots are limited — grab yours now 👇</p>
+        <a href="#register" class="btn btn--primary">Register Now</a>
+      </div>
+    </section>
+
+    <!-- ============ TECH STACK ============ -->
+    <section class="section" id="tech">
+      <div class="section__head reveal">
+        <span class="eyebrow">★ The lineup</span>
+        <h2>Your checkpoints to the summit 🏔️</h2>
+        <p class="lead">Each one is beginner-friendly. Climb them all and you're officially GOATed.</p>
+      </div>
+
+      <div class="tech-grid reveal">
+        <article class="tech-card">
+          <span class="tech-card__icon">🖥️</span>
+          <span class="tag tag--web">Web</span>
+          <h3>Build a WebOS</h3>
+          <p>Make an operating system that runs in your browser.</p>
+        </article>
+        <article class="tech-card">
+          <span class="tech-card__icon">🔌</span>
+          <span class="tag tag--hw">Hardware</span>
+          <h3>Make hardware with KiCad</h3>
+          <p>Design your own circuit board like a real engineer.</p>
+        </article>
+        <article class="tech-card">
+          <span class="tech-card__icon">🔤</span>
+          <span class="tag tag--lang">Languages</span>
+          <h3>Create a programming language</h3>
+          <p>Invent a language and watch the computer obey it.</p>
+        </article>
+        <article class="tech-card">
+          <span class="tech-card__icon">🎨</span>
+          <span class="tag tag--web">Web</span>
+          <h3>Build a WebGL renderer</h3>
+          <p>Draw 3D graphics straight on the web with code.</p>
+        </article>
+        <article class="tech-card">
+          <span class="tech-card__icon">🌐</span>
+          <span class="tag tag--web">Web</span>
+          <h3>Call an API</h3>
+          <p>Pull live data from the internet into your own app.</p>
+        </article>
+        <article class="tech-card">
+          <span class="tech-card__icon">🎮</span>
+          <span class="tag tag--game">Games</span>
+          <h3>Make a 3D game with Godot</h3>
+          <p>Build and play your own 3D game by the weekend's end.</p>
+        </article>
+        <article class="tech-card">
+          <span class="tech-card__icon">🤖</span>
+          <span class="tag tag--ai">AI</span>
+          <h3>Build an AI chatbot</h3>
+          <p>Teach a computer to talk back — make your own mini-AI.</p>
+        </article>
+        <article class="tech-card tech-card--more">
+          <span class="tech-card__icon">✨</span>
+          <h3>...and more</h3>
+          <p>We're cooking up even more surprises. Stay tuned!</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SCHEDULE ============ -->
+    <section class="section section--tint" id="schedule">
+      <div class="section__head reveal">
+        <span class="eyebrow">The plan</span>
+        <h2>Two days, packed with building</h2>
+      </div>
+
+      <div class="tabs reveal" id="scheduleTabs">
+        <div class="tabs__btns" role="tablist" aria-label="Schedule days">
+          <button class="tabs__btn is-active" role="tab" aria-selected="true" data-tab="day1">Day 1 · Aug 15</button>
+          <button class="tabs__btn" role="tab" aria-selected="false" data-tab="day2">Day 2 · Aug 16</button>
+        </div>
+
+        <div class="tabs__panel is-active" id="day1" role="tabpanel">
+          <ul class="timeline">
+            <li><span class="timeline__time">9:00</span><div><h4>Kickoff &amp; welcome 🐐</h4><p>Meet your mentors and teammates.</p></div></li>
+            <li><span class="timeline__time">10:00</span><div><h4>Workshops begin</h4><p>Your first checkpoints — WebOS, APIs &amp; more.</p></div></li>
+            <li><span class="timeline__time">13:00</span><div><h4>Lunch break 🍕</h4><p>Refuel and swap ideas.</p></div></li>
+            <li><span class="timeline__time">14:00</span><div><h4>Build sprint</h4><p>Keep climbing — hardware, games, graphics.</p></div></li>
+            <li><span class="timeline__time">18:00</span><div><h4>Day 1 wrap</h4><p>Share what you built today.</p></div></li>
+          </ul>
+        </div>
+
+        <div class="tabs__panel" id="day2" role="tabpanel" hidden>
+          <ul class="timeline">
+            <li><span class="timeline__time">9:00</span><div><h4>Day 2 kickoff</h4><p>Pick your capstone project.</p></div></li>
+            <li><span class="timeline__time">10:00</span><div><h4>Capstone build sprint</h4><p>Bring it all together into one project.</p></div></li>
+            <li><span class="timeline__time">13:00</span><div><h4>Lunch break 🍕</h4><p>Last push fuel.</p></div></li>
+            <li><span class="timeline__time">15:00</span><div><h4>Demos 🎤</h4><p>Show off what you made!</p></div></li>
+            <li><span class="timeline__time">17:00</span><div><h4>Closing &amp; GOAT awards 🏆</h4><p>You did it — you're GOATed.</p></div></li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted center">Times are tentative and will be finalized closer to the event.</p>
+    </section>
+
+    <!-- ============ SPEAKERS / MENTORS ============ -->
+    <section class="section" id="mentors">
+      <div class="section__head reveal">
+        <span class="eyebrow">Mentors</span>
+        <h2>Mentors announced soon 🐐</h2>
+        <p class="lead">We're teaming up with awesome people to come teach and mentor. Watch this space!</p>
+      </div>
+      <div class="mentors reveal">
+        <div class="mentor-slot"><span>?</span></div>
+        <div class="mentor-slot"><span>?</span></div>
+        <div class="mentor-slot"><span>?</span></div>
+        <div class="mentor-slot"><span>?</span></div>
+      </div>
+    </section>
+
+    <!-- ============ STATS ============ -->
+    <section class="section section--dark" id="stats">
+      <div class="stats reveal">
+        <div class="stat"><strong data-count="120">0</strong><span>teen builders</span></div>
+        <div class="stat"><strong data-count="7">0</strong><span>technologies</span></div>
+        <div class="stat"><strong data-count="16">0</strong><span>build hours</span></div>
+        <div class="stat"><strong data-count="100">0</strong><span>% free</span></div>
+      </div>
+    </section>
+
+    <!-- ============ SPONSORS ============ -->
+    <section class="section" id="sponsors">
+      <div class="section__head reveal">
+        <span class="eyebrow">Sponsors</span>
+        <h2>Made possible by great people</h2>
+        <p class="lead">We're reaching out to sponsors right now. Want to fund the fun — or come teach? We'd love to chat.</p>
+      </div>
+      <div class="sponsors reveal">
+        <div class="sponsor-slot">Your logo here</div>
+        <div class="sponsor-slot">Your logo here</div>
+        <div class="sponsor-slot">Your logo here</div>
+        <div class="sponsor-slot">Your logo here</div>
+      </div>
+      <div class="cta-strip reveal">
+        <p>Want to sponsor G.O.A.T.'ed?</p>
+        <a href="mailto:hello@goated.dev" class="btn btn--secondary">Become a sponsor</a>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="section section--tint" id="faq">
+      <div class="section__head reveal">
+        <span class="eyebrow">Questions?</span>
+        <h2>Frequently asked, happily answered</h2>
+      </div>
+
+      <div class="faq reveal" id="faqList">
+        <details><summary>Who can join?</summary><p>Any teen aged 13–18. If that's you, you're in! 🎉</p></details>
+        <details><summary>Do I need coding experience?</summary><p>Nope! We're super beginner-friendly and will teach you to code from scratch.</p></details>
+        <details><summary>How much does it cost?</summary><p>Nothing — it's totally free for all participants.</p></details>
+        <details><summary>Is it online or in-person?</summary><p>In-person, in New York City. (Exact venue coming soon.)</p></details>
+        <details><summary>Do I need a team?</summary><p>Don't worry about it — teens team up with teens and we'll help sort it out on the day.</p></details>
+        <details><summary>What should I bring?</summary><p>Just yourself and your curiosity. We'll share a full list closer to the event.</p></details>
+      </div>
+    </section>
+
+    <!-- ============ REGISTER / FINAL CTA ============ -->
+    <section class="final" id="register">
+      <div class="final__inner reveal">
+        <h2>Ready to become the GOAT? 🐐</h2>
+        <p>Drop your email and we'll save your spot. Aug 15–16 · NYC · Free.</p>
+
+        <form class="signup signup--big" id="finalSignup">
+          <input type="email" name="email" placeholder="you@email.com" required aria-label="Email address" />
+          <button type="submit" class="btn btn--primary">Save my spot ✨</button>
+        </form>
+        <p class="signup__note" id="finalSignupNote" role="status"></p>
+
+        <div class="countdown countdown--light" id="countdown2" aria-hidden="true">
+          <div class="countdown__box"><strong data-unit="days">--</strong><span>days</span></div>
+          <div class="countdown__box"><strong data-unit="hours">--</strong><span>hrs</span></div>
+          <div class="countdown__box"><strong data-unit="minutes">--</strong><span>min</span></div>
+          <div class="countdown__box"><strong data-unit="seconds">--</strong><span>sec</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="logo__goat">🐐</span>
+        <div>
+          <strong>G.O.A.T.'ed</strong>
+          <p>The learnathon for future Geeks Of All Trades.</p>
+        </div>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#about">About</a>
+        <a href="#tech">Tech</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#faq">FAQ</a>
+        <a href="#register">Register</a>
+      </nav>
+      <div class="footer__contact">
+        <a href="mailto:hello@goated.dev">hello@goated.dev</a>
+        <a href="#top">Code of conduct</a>
+      </div>
+    </div>
+    <p class="footer__copy">© 2026 G.O.A.T.'ed · Made with 💜 for teen builders.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
