@@ -21,13 +21,13 @@
       set(cd, "days", d); set(cd, "hours", h);
       set(cd, "minutes", m); set(cd, "seconds", s);
     });
-    if (navChip) navChip.textContent = done ? "Happening now! 🐐" : "Starts in " + d + "d";
+    if (navChip) navChip.textContent = done ? "Happening now!" : "Starts in " + d + "d";
   }
   function set(scope, unit, val) {
     var el = scope.querySelector('[data-unit="' + unit + '"]');
     if (el) el.textContent = val < 10 ? "0" + val : "" + val;
   }
-  if (countdowns.length) { tick(); setInterval(tick, 1000); }
+  if (countdowns.length) { tick(); setInterval(tick, 1000); } 
 
   /* ---------- Mobile drawer ---------- */
   var burger = document.getElementById("navBurger");
@@ -67,6 +67,36 @@
     });
   }
 
+  /* ---------- Modals (mentor / sponsor) ---------- */
+  var lastFocused = null;
+  function openModal(id) {
+    var modal = document.getElementById("modal-" + id);
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+    var closeBtn = modal.querySelector(".modal__close");
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeModal(modal) {
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+  document.querySelectorAll("[data-modal]").forEach(function (btn) {
+    btn.addEventListener("click", function () { openModal(btn.getAttribute("data-modal")); });
+  });
+  document.querySelectorAll(".modal").forEach(function (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target.closest("[data-close]")) closeModal(modal);
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      document.querySelectorAll('.modal[aria-hidden="false"]').forEach(closeModal);
+    }
+  });
+
   /* ---------- Scroll reveal + stat counters ---------- */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -93,19 +123,26 @@
     });
   }
 
-  /* ---------- Email sign-up (no backend — friendly confirm) ---------- */
-  function wireSignup(formId, noteId) {
+  /* ---------- Forms → Netlify Forms (AJAX, so we keep the inline confirm) ---------- */
+  function wireForm(formId, noteId, successMsg) {
     var form = document.getElementById(formId);
     var note = document.getElementById(noteId);
     if (!form) return;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var input = form.querySelector('input[type="email"]');
-      if (note) note.textContent = "🎉 You're on the list! We'll be in touch soon.";
-      form.reset();
-      if (input) input.blur();
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(form)).toString()
+      }).then(function () {
+        if (note) note.textContent = successMsg;
+        form.reset();
+      }).catch(function () {
+        if (note) note.textContent = "Hmm, that didn't go through — please try again.";
+      });
     });
   }
-  wireSignup("heroSignup", "heroSignupNote");
-  wireSignup("finalSignup", "finalSignupNote");
+  wireForm("heroSignup", "heroSignupNote", "🎉 You're on the list! We'll be in touch soon.");
+  wireForm("finalSignup", "finalSignupNote", "🎉 You're on the list! We'll be in touch soon.");
+  wireForm("contactForm", "contactNote", "Thanks for reaching out! We'll get back to you soon.");
 })();
