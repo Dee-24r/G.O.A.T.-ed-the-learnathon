@@ -4,8 +4,8 @@
 (function () {
   "use strict";
 
-  /* ---------- Countdown to Aug 14, 2026 09:00 ---------- */
-  var EVENT = new Date("2026-08-14T09:00:00").getTime();
+  /* ---------- Countdown to Aug 21, 2026 09:00 ---------- */
+  var EVENT = new Date("2026-08-21T09:00:00").getTime();
   var countdowns = document.querySelectorAll(".countdown");
   var navChip = document.getElementById("navCountdown");
 
@@ -145,4 +145,6 @@
   wireForm("heroSignup", "heroSignupNote", "🎉 You're on the list! We'll be in touch soon.");
   wireForm("finalSignup", "finalSignupNote", "🎉 You're on the list! We'll be in touch soon.");
   wireForm("contactForm", "contactNote", "Thanks for reaching out! We'll get back to you soon.");
+  wireForm("sponsorForm", "sponsorNote", "Thanks for reaching out! We'll get back to you soon.");
+  wireForm("mentorForm", "mentorNote", "Thanks for reaching out! We'll get back to you soon.");
 })();
