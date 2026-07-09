@@ -4,8 +4,8 @@
 (function () {
   "use strict";
 
-  /* ---------- Countdown to Aug 15, 2026 09:00 ---------- */
-  var EVENT = new Date("2026-08-15T09:00:00").getTime();
+  /* ---------- Countdown to Aug 14, 2026 09:00 ---------- */
+  var EVENT = new Date("2026-08-14T09:00:00").getTime();
   var countdowns = document.querySelectorAll(".countdown");
   var navChip = document.getElementById("navCountdown");
 
