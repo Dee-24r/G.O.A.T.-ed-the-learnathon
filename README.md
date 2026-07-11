@@ -4,7 +4,7 @@
 
 G.O.A.T.'ed (Geek Of All Trades) is a two-day tech bootcamp/learnathon in NYC created by a team of independent 18-year-old organizers who will bring 40 teenagers together to learn 5-7 new technologies and build a capstone project.
 
-Find out how to partner with the [sponsors' kit]()
+Find out how to partner with the [sponsors' kit](G.O.A.T’ed%20the%20Learnathon%20-%20Sponsors%20and%20Mentors'%20kit.pdf)
 
 - Reach out: [contact@goatedlearnathon.com](mailto:contact@goatedlearnathon.com)
 - Donate: [through HCB](https://hcb.hackclub.com/donations/start/g-o-a-t-ed-the-learnathon)
